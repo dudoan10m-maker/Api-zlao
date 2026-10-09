@@ -6,7 +6,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 # For production, set ALLOWED_ORIGINS to your frontend domain(s), comma-separated.
 _origins = [x.strip() for x in os.getenv('ALLOWED_ORIGINS', '*').split(',') if x.strip()]
-CORS(app, resources={r"/api/*": {"origins": _origins}})
+CORS(app, resources={r"/*": {"origins": _origins}})
 
 API_SECRET = os.getenv('API_SECRET', '')
 
